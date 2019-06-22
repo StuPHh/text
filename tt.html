@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+    <img src="im/text1.jpg" id="img1" />
+    <pre id="one"></pre>
+    <br/>
+    <img src="im/text2.jpg" id="img2" />
+    <pre id="two"></pre>
+    <br/>
+    <img src="im/text3.jpg" id="img3" />
+    <pre id="three"></pre>
+    <br/>
+
+    <script scr="im/exif.js"></script>
+    <script type="text/javascript">
+        import * as EXIF from "./im/exif";
+
+        var img1= document.getElementById("img1");
+        EXIF.getData(img1, function() {
+            var allMetaData = EXIF.getAllTags(this);
+            var allMetaDataSpan = document.getElementById("one");
+            allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+        });
+    </script>
+</body>
+</html>
