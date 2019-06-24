@@ -8,8 +8,8 @@
         html,
         body,
         #container {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
         }
     </style>
 </head>
@@ -18,28 +18,120 @@
 <div id="container"></div>
 <!-- 加载地图JSAPI脚本 -->
 <script src="https://webapi.amap.com/maps?v=1.4.11&key=079c765bfd36edd13f101c05c0a891b1"></script>
+
+<img src="im/text1.jpg" id="img1" width="150px" height="150px" scrolling="no" frameborder="0"/>
+<pre id="one"></pre>
+<br/>
+
+<img src="im/text2.jpg" id="img2" width="150px" height="150px" scrolling="no" frameborder="0"/>
+<pre id="two"></pre>
+<br/>
+
+<img src="im/text3.jpg" id="img3" width="150px" height="150px" scrolling="no" frameborder="0"/>
+<pre id="three"></pre>
+<br/>
+
+<img src="im/text4.jpg" id="img4" width="150px" height="150px" scrolling="no" frameborder="0"/>
+<pre id="four"></pre>
+<br/>
+
+<img src="im/text5.jpg" id="img5" width="150px" height="150px" scrolling="no" frameborder="0"/>
+<pre id="five"></pre>
+<br/>
+
 <script type="text/javascript" scr="im/exif.js"></script>
+
 <script type="text/javascript">
     var map = new AMap.Map('container', {
         resizeEnable: true, //是否监控地图容器尺寸变化
         zoom: 11, //初始化地图层级
-        center: [116.397428, 39.90923] //初始化地图中心点（地图的坐标）
+        center: [111.748426,40.842723] //初始化地图中心点（地图的坐标）
     });
-    //text1GPS读取
+    
+    function  readGPS(h,m,s) {
+        var t = m * 60 + s;
+        var p = t / 3600 + h;
+        return p;
+    }
 
+    //textGPS读取
+    var t11 = readGPS(111,47,10.517578);
+    var t12 = readGPS(40,29,36.269531);
 
+    var t21 = readGPS(111,38,59.456176);
+    var t22 = readGPS(40,47,58.912353);
 
+    var t31 = readGPS(111,46,42.612304);
+    var t32 = readGPS(40,29,24.486694);
+
+    var t41 = readGPS(111,43,59.849853);
+    var t42 = readGPS(40,50,15.032958);
+
+    var t51 = readGPS(109, 50, 10.418701);
+    var t52 = readGPS(39, 33, 40.619201);
+
+    //测试
+    /*window.alert(t12);
+
+    var x = 116.39;
+    var y = 39.9;*/
 
 
 
     // 创建一个 Marker 实例：
-    var marker = new AMap.Marker({
-        position: new AMap.LngLat(116.39, 39.9),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-        title: '北京'
+    var marker1 = new AMap.Marker({
+        position: new AMap.LngLat(t11, t12),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: 'text1'
     });
-    // 将创建的点标记添加到已有的地图实例：
-    map.add(marker);
 
+    var marker2 = new AMap.Marker({
+        position: new AMap.LngLat(t21, t22),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: 'text2'
+    });
+
+    var marker3 = new AMap.Marker({
+        position: new AMap.LngLat(t31, t32),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: 'text3'
+    });
+
+    var marker4 = new AMap.Marker({
+        position: new AMap.LngLat(t41, t42),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: 'text4'
+    });
+
+    var marker5 = new AMap.Marker({
+        position: new AMap.LngLat(t41, t42),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: 'text5'
+    });
+
+    // 将创建的点标记添加到已有的地图实例：
+    map.add(marker1);
+
+    map.add(marker2);
+
+    map.add(marker3);
+
+    map.add(marker4);
+
+    map.add(marker5);
+
+    var lineArr = [];
+    lineArr.push([t31,t32]);
+    lineArr.push([t11,t12]);
+    lineArr.push([t41,t42]);
+    lineArr.push([t21,t22]);
+    lineArr.push([t51,t52]);
+    lineArr.push([t31,t32]);
+
+    var polyline = new AMap.Polyline({
+        map: map,
+        path: lineArr,
+        strokeColor: "#00A",  //线颜色
+        strokeOpacity: 1,     //线透明度
+        strokeWeight: 3,      //线宽
+        strokeStyle: "solid"  //线样式
+    });
+    map.setFitView();
 
 </script>
 </body>
