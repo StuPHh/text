@@ -27,6 +27,11 @@
     <pre id="five"></pre>
     <br/>
 
+    <img src="im/text6.jpg" id="img6" width="300px" height="300px" scrolling="no" frameborder="0"/>
+    <pre id="six"></pre>
+    <br/>
+
+
 <script type="text/javascript" src="im/exif.js"></script>
 <script>
     "use strict";
@@ -41,22 +46,23 @@
     x = text();
     window.alert(x);*/
     var pic11 ,pic12;
+    var a = 3;
     function getExif() {
 
         var img1 = document.getElementById("img1");
         EXIF.getData(img1, function() {
-            var allMetaData = EXIF.getAllTags(this);
+            var allMetaData = EXIF.getAllTags(img1);
             var allMetaDataSpan = document.getElementById("one");
 
-            pic11 = EXIF.getTag(this, 'GPSLongitude');
-            pic12 = EXIF.getTag(this, 'GPSLatitude');
-            window.alert(pic12);
+            pic11 = EXIF.getTag(img1, 'GPSLongitude');
+            pic12 = EXIF.getTag(img1, 'GPSLatitude');
             //测试
-            //window.alert(pic11);
-           allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
 
+            a=4;
+            window.alert(a);
+            allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
         });
-
+        window.alert(a);
 
         var img2 = document.getElementById("img2");
         EXIF.getData(img2, function() {
@@ -83,6 +89,13 @@
         EXIF.getData(img5, function() {
             var allMetaData = EXIF.getAllTags(this);
             var allMetaDataSpan = document.getElementById("five");
+            allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+        });
+
+        var img6 = document.getElementById("img6");
+        EXIF.getData(img6, function() {
+            var allMetaData = EXIF.getAllTags(this);
+            var allMetaDataSpan = document.getElementById("six");
             allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
         });
     }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>老家->三峡->师大图书馆</title>
     <style>
         /* 设置容器样式，可根据自身需求设置，我这里就直接铺满了 */
         html,
@@ -23,20 +23,8 @@
 <pre id="one"></pre>
 <br/>
 
-<img src="im/text2.jpg" id="img2" width="150px" height="150px" scrolling="no" frameborder="0"/>
-<pre id="two"></pre>
-<br/>
-
 <img src="im/text3.jpg" id="img3" width="150px" height="150px" scrolling="no" frameborder="0"/>
 <pre id="three"></pre>
-<br/>
-
-<img src="im/text4.jpg" id="img4" width="150px" height="150px" scrolling="no" frameborder="0"/>
-<pre id="four"></pre>
-<br/>
-
-<img src="im/text5.jpg" id="img5" width="150px" height="150px" scrolling="no" frameborder="0"/>
-<pre id="five"></pre>
 <br/>
 
 <img src="im/text6.jpg" id="img6" width="150px" height="150px" scrolling="no" frameborder="0"/>
@@ -59,31 +47,18 @@
     }
 
     //textGPS读取
-    // 1 6 3 4 2 5
-    //三峡
-    var t11 = readGPS(111, 0, 42.544555);
-    var t12 = readGPS(30, 49, 57.756958);
 
     //大昭寺
-    var t21 = readGPS(111,38,59.456176);
-    var t22 = readGPS(40,47,58.912353);
+    var t11 = readGPS(111, 0, 42.544555);
+    var t12 = readGPS(30, 49, 57.756958);
 
     //师大图书馆
     var t31 = readGPS(111,46,42.612304);
     var t32 = readGPS(40,29,24.486694);
 
-    //内蒙古博物馆
-    var t41 = readGPS(111,43,59.849853);
-    var t42 = readGPS(40,50,15.032958);
-
     //鄂尔多斯火车站
-    var t51 = readGPS(109, 50, 10.418701);
-    var t52 = readGPS(39, 33, 40.619201);
-
-    //老家
     var t61 = readGPS(114, 18, 2.180786);
     var t62 = readGPS(30, 51, 43.514099);
-
 
     //测试
     /*window.alert(t12);
@@ -94,29 +69,15 @@
 
 
     // 创建一个 Marker 实例：
+
     var marker1 = new AMap.Marker({
         position: new AMap.LngLat(t11, t12),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
         title: 'text1'
     });
 
-    var marker2 = new AMap.Marker({
-        position: new AMap.LngLat(t21, t22),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-        title: 'text2'
-    });
-
     var marker3 = new AMap.Marker({
         position: new AMap.LngLat(t31, t32),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
         title: 'text3'
-    });
-
-    var marker4 = new AMap.Marker({
-        position: new AMap.LngLat(t41, t42),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-        title: 'text4'
-    });
-
-    var marker5 = new AMap.Marker({
-        position: new AMap.LngLat(t51, t52),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-        title: 'text5'
     });
 
     var marker6 = new AMap.Marker({
@@ -127,24 +88,14 @@
     // 将创建的点标记添加到已有的地图实例：
     map.add(marker1);
 
-    map.add(marker2);
-
     map.add(marker3);
-
-    map.add(marker4);
-
-    map.add(marker5);
 
     map.add(marker6);
 
     var lineArr = [];
-
     lineArr.push([t11,t12]);
-    lineArr.push([t61,t62]);
     lineArr.push([t31,t32]);
-    lineArr.push([t41,t42]);
-    lineArr.push([t21,t22]);
-    lineArr.push([t51,t52]);
+    lineArr.push([t61,t62]);
     lineArr.push([t11,t12]);
 
     var polyline = new AMap.Polyline({
