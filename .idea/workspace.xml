@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="300">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -113,9 +113,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="137" />
-    <option name="y" value="16" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="753" />
+    <option name="y" value="35" />
     <option name="width" value="1670" />
     <option name="height" value="965" />
   </component>
@@ -199,16 +199,15 @@
       <workItem from="1561336164922" duration="8894000" />
       <workItem from="1561429029927" duration="6137000" />
       <workItem from="1561438402547" duration="378000" />
-      <workItem from="1561551068145" duration="5555000" />
+      <workItem from="1561551068145" duration="5817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54317000" />
+    <option name="totallyTimeSpent" value="54579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="13" width="1336" height="772" extended-state="0" />
-    <editor active="true" />
+    <frame x="611" y="0" width="1336" height="772" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17461538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -302,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
